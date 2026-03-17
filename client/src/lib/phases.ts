@@ -24,7 +24,7 @@ export const phases: Phase[] = [
     title: 'FASE 2',
     question: '',
     answer: 'deluxe',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase2-super-sidekicks-konami-v3-PCrjMManpeGWum974NidsC.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase2-allejo-gol-KLcHkcvwAvhRU4yWtyC6db.webp',
     hint: 'International..... ultima palavra',
   },
   {
@@ -65,7 +65,7 @@ export const phases: Phase[] = [
   },
   {
     id: 7,
-    url: '/steam',
+    url: '/steam/app/',
     title: 'FASE 7',
     question: '',
     answer: 'atreus',
