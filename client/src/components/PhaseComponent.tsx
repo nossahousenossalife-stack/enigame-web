@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { toast } from 'sonner';
 import { Phase, checkAnswer } from '@/lib/phases';
 
@@ -11,11 +11,51 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
   const [answer, setAnswer] = useState('');
   const [showHint, setShowHint] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const konamiSequence = useRef<string[]>([]);
+
+  // Konami Code: Cima, Cima, Baixo, Baixo, Esquerda, Direita, Esquerda, Direita, B, A
+  const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
   // Limpar o campo de resposta quando a fase mudar
   useEffect(() => {
     setAnswer('');
     setShowHint(false);
+    konamiSequence.current = [];
+  }, [phase.id]);
+
+  // Detectar Konami Code
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const key = e.key;
+      
+      // Adicionar tecla à sequência
+      konamiSequence.current.push(key);
+      
+      // Manter apenas os últimos 10 comandos
+      if (konamiSequence.current.length > 10) {
+        konamiSequence.current.shift();
+      }
+
+      // Verificar se o Konami Code foi digitado
+      if (konamiSequence.current.length === 10) {
+        const isKonamiCode = konamiCode.every((key, index) => {
+          const userKey = konamiSequence.current[index];
+          if (key === 'b' || key === 'a') {
+            return userKey.toLowerCase() === key;
+          }
+          return userKey === key;
+        });
+
+        if (isKonamiCode && phase.id === 2) {
+          toast.success('🎮 KONAMI CODE ATIVADO! Resposta revelada: deluxe');
+          setAnswer('deluxe');
+          konamiSequence.current = [];
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [phase.id]);
 
   const handleSubmit = (e: React.FormEvent) => {

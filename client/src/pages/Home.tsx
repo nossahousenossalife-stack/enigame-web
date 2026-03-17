@@ -73,6 +73,9 @@ export default function Home() {
               <p className="arcade-neon-cyan text-sm md:text-base mb-6">
                 Responda corretamente ou altere a URL para avançar de fase.
               </p>
+              <p className="arcade-neon-magenta text-xs md:text-sm border-t border-magenta-500 pt-4 mt-4">
+                🔐 <strong>Atenção:</strong> Nesse game será utilizado em alguns momentos códigos de criptografia como <strong>ASCII</strong>, <strong>Base64</strong>, <strong>QR Code</strong> e outros métodos de descriptografia.
+              </p>
             </div>
 
             <button
