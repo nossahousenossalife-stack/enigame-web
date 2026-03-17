@@ -47,7 +47,7 @@ export const phases: Phase[] = [
   },
   {
     id: 5,
-    url: '/ytb',
+    url: '/matador',
     title: 'FASE 5',
     question: '',
     answer: 'saria song',
@@ -74,7 +74,7 @@ export const phases: Phase[] = [
   },
   {
     id: 8,
-    url: '/matador',
+    url: '/ytb',
     title: 'FASE 8',
     question: '',
     answer: 'origin',
