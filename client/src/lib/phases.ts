@@ -16,7 +16,7 @@ export const phases: Phase[] = [
     question: 'Essa é o tutorial',
     answer: 'mario',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase1-kart-mario-54vf4ipchWCfcqzu6gr4qz.webp',
-    hint: 'Este personagem é o herói mais famoso da Nintendo!',
+    hint: 'Cano',
   },
   {
     id: 2,
