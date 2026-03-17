@@ -39,9 +39,11 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
         <h1 className="text-2xl md:text-4xl font-bold arcade-neon-yellow mb-2" style={{ fontFamily: "'Press Start 2P', cursive" }}>
           {phase.title}
         </h1>
-        <p className="arcade-neon-cyan text-lg md:text-xl">
-          {phase.question}
-        </p>
+        {phase.question && (
+          <p className="arcade-neon-cyan text-lg md:text-xl">
+            {phase.question}
+          </p>
+        )}
       </div>
 
       {/* Answer Form */}

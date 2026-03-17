@@ -13,7 +13,7 @@ export const phases: Phase[] = [
     id: 1,
     url: '/atrasdoarmario',
     title: 'FASE 1',
-    question: 'O que está faltando no Kart?',
+    question: 'Essa é o tutorial',
     answer: 'mario',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase1-kart-mario-54vf4ipchWCfcqzu6gr4qz.webp',
     hint: 'Este personagem é o herói mais famoso da Nintendo!',
@@ -24,10 +24,19 @@ export const phases: Phase[] = [
     title: 'FASE 2',
     question: 'Qual é o nome deste jogo?',
     answer: 'supersidekicks',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase2-super-sidekicks-LWSEbByJBb5dQoZcEVNMhQ.webp',
-    hint: 'Um jogo de futebol clássico dos anos 90!',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase2-super-sidekicks-v3-9s5DAxbiN84vTrQtLNvsri.webp',
+    hint: 'Do meio campo não vale',
   },
-  // Fases 3-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 3,
+    url: '/hehehethankyou',
+    title: 'FASE 3',
+    question: '',
+    answer: 'mercador',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase3-mercador-c9aswU3No4tN4tEigGQN3q.webp',
+    hint: 'stranger',
+  },
+  // Fases 4-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
