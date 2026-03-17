@@ -69,15 +69,6 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="arcade-border p-6 bg-gray-900 max-w-md w-full">
-              <p className="arcade-neon-magenta text-sm mb-4">
-                Para começar, navegue até:
-              </p>
-              <p className="arcade-neon-yellow font-mono text-lg break-all">
-                www.enigame.com.br/atrasdoarmario
-              </p>
-            </div>
-
             <button
               onClick={() => setLocation('/atrasdoarmario')}
               className="arcade-border p-4 bg-gray-900 text-lime-400 font-bold text-xl transition-all hover:shadow-lg hover:shadow-lime-400 arcade-neon-green"
