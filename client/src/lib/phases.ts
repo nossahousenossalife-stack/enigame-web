@@ -33,7 +33,7 @@ export const phases: Phase[] = [
     title: 'FASE 3',
     question: '',
     answer: 'mercador',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase3-mercador-tochas-v2-27BfMm5kCNNwqCifwnH3bR.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase3-mercador-final-AHX3RpmmxFPYq9CBufk966.webp',
     hint: 'stranger',
   },
   {
