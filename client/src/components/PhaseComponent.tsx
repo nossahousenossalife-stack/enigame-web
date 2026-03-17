@@ -62,16 +62,11 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
     e.preventDefault();
 
     if (checkAnswer(answer, phase.answer)) {
-      toast.success('🎮 Resposta correta! Você avançou!');
+      toast.success('🎎 Resposta correta! Você avançou!');
       
-      // Iniciar efeito de transição
+      // Iniciar efeito de transição e navegar imediatamente
       setIsTransitioning(true);
-      
-      // Aguardar a transição terminar antes de navegar
-      setTimeout(() => {
-        setIsTransitioning(false);
-        onCorrectAnswer();
-      }, 600);
+      onCorrectAnswer();
     } else {
       toast.error('❌ Resposta incorreta. Tente novamente!');
       setAnswer('');

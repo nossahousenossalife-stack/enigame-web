@@ -36,16 +36,13 @@ export default function Home() {
   };
 
   const handlePhaseComplete = () => {
-    toast.success('🎉 Fase concluída! Próxima fase em breve...');
     // Navegar para a próxima fase baseado no ID da fase atual
-    setTimeout(() => {
-      if (currentPhase && currentPhase.id < 20) {
-        const nextPhase = phases.find((p) => p.id === currentPhase.id + 1);
-        if (nextPhase) {
-          setLocation(nextPhase.url);
-        }
+    if (currentPhase && currentPhase.id < 20) {
+      const nextPhase = phases.find((p) => p.id === currentPhase.id + 1);
+      if (nextPhase) {
+        setLocation(nextPhase.url);
       }
-    }, 2000);
+    }
   };
 
   return (
