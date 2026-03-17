@@ -22,10 +22,10 @@ export const phases: Phase[] = [
     id: 2,
     url: '/sacodogoleiro',
     title: 'FASE 2',
-    question: 'Qual é o nome deste jogo?',
-    answer: 'supersidekicks',
+    question: '',
+    answer: 'deluxe',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase2-super-sidekicks-v3-9s5DAxbiN84vTrQtLNvsri.webp',
-    hint: 'Do meio campo não vale',
+    hint: 'International..... ultima palavra',
   },
   {
     id: 3,
@@ -36,7 +36,43 @@ export const phases: Phase[] = [
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase3-mercador-c9aswU3No4tN4tEigGQN3q.webp',
     hint: 'stranger',
   },
-  // Fases 4-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 4,
+    url: '/c4',
+    title: 'FASE 4',
+    question: '',
+    answer: 'bomba patch',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase4-custom-cropped_e707ea8f.png',
+    hint: 'É ruim',
+  },
+  {
+    id: 5,
+    url: '/ytb',
+    title: 'FASE 5',
+    question: '',
+    answer: 'saria song',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase5-zelda-saria-v4-kN8mVpQx3tY9jL2wZ5aB4c.png',
+    hint: 'Base',
+  },
+  {
+    id: 6,
+    url: '/-r',
+    title: 'FASE 6',
+    question: '',
+    answer: 'bowser',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase6-bowser-browsers-ahjvEXuGaL9m3XUHrqERuc.webp',
+    hint: 'BOSS',
+  },
+  {
+    id: 7,
+    url: '/steam',
+    title: 'FASE 7',
+    question: '',
+    answer: 'atreus',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase7-god-of-war-v4-Q7erZ629nCm7mBqcW5GUv5.webp',
+    hint: 'filho',
+  },
+  // Fases 8-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
