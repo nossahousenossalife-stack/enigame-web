@@ -72,7 +72,16 @@ export const phases: Phase[] = [
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase7-god-of-war-v4-Q7erZ629nCm7mBqcW5GUv5.webp',
     hint: 'filho',
   },
-  // Fases 8-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 8,
+    url: '/matador',
+    title: 'FASE 8',
+    question: '',
+    answer: 'origin',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase8-pyramid-head-egito-Nh9reS3g5RaiAtdgiG7x6P.webp',
+    hint: 'My sacrifice',
+  },
+  // Fases 9-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
