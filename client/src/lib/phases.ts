@@ -65,7 +65,7 @@ export const phases: Phase[] = [
   },
   {
     id: 7,
-    url: '/steam/app/',
+    url: '/steamapp',
     title: 'FASE 7',
     question: '',
     answer: 'atreus',
