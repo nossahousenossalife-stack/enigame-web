@@ -4,11 +4,12 @@ import BrowserSimulator from '@/components/BrowserSimulator';
 import PhaseComponent from '@/components/PhaseComponent';
 import Footer from '@/components/Footer';
 import { phases, getPhaseByUrl } from '@/lib/phases';
+import type { Phase } from '@/lib/phases';
 import { toast } from 'sonner';
 
 export default function Home() {
   const [location, setLocation] = useLocation();
-  const [currentPhase, setCurrentPhase] = useState<typeof phases[0] | null>(null);
+  const [currentPhase, setCurrentPhase] = useState<Phase | null>(null);
   const [phaseNotFound, setPhaseNotFound] = useState(false);
 
   // Parse current path from location
@@ -36,9 +37,14 @@ export default function Home() {
 
   const handlePhaseComplete = () => {
     toast.success('🎉 Fase concluída! Próxima fase em breve...');
-    // Aqui você pode adicionar a navegação para a próxima fase
+    // Navegar para a próxima fase baseado no ID da fase atual
     setTimeout(() => {
-      setLocation('/proxima-fase');
+      if (currentPhase && currentPhase.id < 20) {
+        const nextPhase = phases.find((p) => p.id === currentPhase.id + 1);
+        if (nextPhase) {
+          setLocation(nextPhase.url);
+        }
+      }
     }, 2000);
   };
 
