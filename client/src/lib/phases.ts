@@ -84,9 +84,17 @@ export const getPhaseById = (id: number): Phase | undefined => {
 };
 
 export const normalizeAnswer = (answer: string): string => {
-  return answer.toLowerCase().trim().replace(/\s+/g, '');
+  return answer.toLowerCase().trim().replace(/[\s']/g, '');
 };
 
 export const checkAnswer = (userAnswer: string, correctAnswer: string): boolean => {
-  return normalizeAnswer(userAnswer) === normalizeAnswer(correctAnswer);
+  const normalized = normalizeAnswer(userAnswer);
+  const correctNormalized = normalizeAnswer(correctAnswer);
+  
+  // Para a Fase 5 (Saria's Song), aceitar múltiplas variações
+  if (correctNormalized === 'sariasong') {
+    return normalized === 'sariasong' || normalized === 'sariassong';
+  }
+  
+  return normalized === correctNormalized;
 };
