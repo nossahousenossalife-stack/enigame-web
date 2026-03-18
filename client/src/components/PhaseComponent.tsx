@@ -174,7 +174,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
                 href="https://veiling.com.br/wp-content/uploads/2025/06/celosia-cristata-683f1639bb911.jpg"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black text-xs mt-2 block hover:underline"
+                className="text-cyan-400 text-xs mt-2 block hover:underline cursor-pointer select-text"
               >
                 https://veiling.com.br/wp-content/uploads/2025/06/celosia-cristata-683f1639bb911.jpg
               </a>
