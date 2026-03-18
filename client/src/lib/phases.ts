@@ -113,7 +113,7 @@ export const phases: Phase[] = [
     title: 'FASE 9',
     question: '',
     answer: 'the sims',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase9-sims-poema-c5ZrM79sCPTXr7yfrcKZhJ.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase9-sims-poema-corrigido-2fzehmmSJ3rmC2GBUrTxWP.webp',
     hint: 'Existem 4?',
     alternativeHints: [],
   },
