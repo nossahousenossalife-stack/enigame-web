@@ -62,7 +62,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (checkAnswer(answer, phase.answer)) {
+    if (checkAnswer(answer, phase.answer, phase.id)) {
       toast.success('🎎 Resposta correta! Você avançou!');
       setAlternativeHintMessage(null);
       onCorrectAnswer();

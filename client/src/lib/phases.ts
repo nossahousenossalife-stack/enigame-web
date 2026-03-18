@@ -139,6 +139,7 @@ export const phases: Phase[] = [
     hint: 'Ponto fraco',
     alternativeHints: [
       { keywords: ['celosia'], message: '...celosia é pop, celosia é tec' },
+      { keywords: ['shadow of the colossus'], message: 'Shadow é pop, shadow é tec' },
       { keywords: ['16', 'boss', 'planta'], message: 'O número da fase é um boss, além de uma planta?' },
     ],
   },
@@ -167,13 +168,18 @@ export const normalizeAnswer = (answer: string): string => {
   return answer.toLowerCase().trim().replace(/[\s']/g, '');
 };
 
-export const checkAnswer = (userAnswer: string, correctAnswer: string): boolean => {
+export const checkAnswer = (userAnswer: string, correctAnswer: string, phaseId?: number): boolean => {
   const normalized = normalizeAnswer(userAnswer);
   const correctNormalized = normalizeAnswer(correctAnswer);
   
   // Para a Fase 5 (Saria's Song), aceitar múltiplas variações
   if (correctNormalized === 'sariasong') {
     return normalized === 'sariasong' || normalized === 'sariassong';
+  }
+  
+  // Para a Fase 12 (Mineirinho), aceitar "Mineirinho Ultra Adventures"
+  if (phaseId === 12 && correctNormalized === 'mineirinho') {
+    return normalized === 'mineirinho' || normalized === 'mineirinhoultraadventures';
   }
   
   return normalized === correctNormalized;
