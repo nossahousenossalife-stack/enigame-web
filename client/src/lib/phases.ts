@@ -117,7 +117,19 @@ export const phases: Phase[] = [
     hint: 'Existem 4?',
     alternativeHints: [],
   },
-  // Fases 10-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 10,
+    url: '/anéis',
+    title: 'FASE 10',
+    question: '',
+    answer: 'tails',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase10-tails-caldas-JGTqMgZ55xhgyoYkkjDPGz.webp',
+    hint: 'Esmeralda',
+    alternativeHints: [
+      { keywords: ['sonic'], message: 'Meu doce preferido é calda de chocolate' },
+    ],
+  },
+  // Fases 11-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
