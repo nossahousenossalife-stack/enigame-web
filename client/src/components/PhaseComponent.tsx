@@ -168,6 +168,17 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
             <p className="arcade-neon-magenta text-xs md:text-sm">
               💡 {phase.hint}
             </p>
+            {/* Link escondido para Fase 11 */}
+            {phase.id === 11 && (
+              <a
+                href="https://veiling.com.br/wp-content/uploads/2025/06/celosia-cristata-683f1639bb911.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black text-xs mt-2 block hover:underline"
+              >
+                https://veiling.com.br/wp-content/uploads/2025/06/celosia-cristata-683f1639bb911.jpg
+              </a>
+            )}
           </div>
         )}
       </div>

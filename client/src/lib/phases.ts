@@ -129,7 +129,19 @@ export const phases: Phase[] = [
       { keywords: ['sonic'], message: 'Meu doce preferido é calda de chocolate' },
     ],
   },
-  // Fases 11-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 11,
+    url: '/16',
+    title: 'FASE 11',
+    question: '',
+    answer: 'agro',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase11-agro-escuro-gJPQ3WFS49kbVsGsQknu7r.webp',
+    hint: 'Se esconde nas sombras',
+    alternativeHints: [
+      { keywords: ['16', 'boss', 'planta'], message: 'O número da fase é um boss, além de uma planta?' },
+    ],
+  },
+  // Fases 12-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
