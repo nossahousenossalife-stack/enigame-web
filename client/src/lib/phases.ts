@@ -123,7 +123,7 @@ export const phases: Phase[] = [
     title: 'FASE 10',
     question: '',
     answer: 'tails',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase10-kurama-caldas-v2-2tQqNEbZEFcMcPuLButNyD.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase10-kurama-caldas-v3-FBvxt9FtPk33nUmssnN696.webp',
     hint: 'Esmeralda',
     alternativeHints: [
       { keywords: ['sonic'], message: 'Meu doce preferido é calda de chocolate' },
