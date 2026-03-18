@@ -136,8 +136,9 @@ export const phases: Phase[] = [
     question: '',
     answer: 'agro',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase11-agro-shadow-PTqkqmCEWytzdPiesJY3Jq.webp',
-    hint: 'Se esconde nas sombras',
+    hint: 'Ponto fraco',
     alternativeHints: [
+      { keywords: ['celosia'], message: '...celosia é pop, celosia é tec' },
       { keywords: ['16', 'boss', 'planta'], message: 'O número da fase é um boss, além de uma planta?' },
     ],
   },

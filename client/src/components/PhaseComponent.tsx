@@ -168,17 +168,20 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
             <p className="arcade-neon-magenta text-xs md:text-sm">
               💡 {phase.hint}
             </p>
-            {/* Link escondido para Fase 11 */}
-            {phase.id === 11 && (
-              <a
-                href="https://veiling.com.br/wp-content/uploads/2025/06/celosia-cristata-683f1639bb911.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 text-xs mt-2 block hover:underline cursor-pointer select-text"
-              >
-                https://veiling.com.br/wp-content/uploads/2025/06/celosia-cristata-683f1639bb911.jpg
-              </a>
-            )}
+          </div>
+        )}
+        
+        {/* Link para Fase 11 - Fora do quadrado de dica */}
+        {showHint && phase.id === 11 && (
+          <div className="mt-3 max-w-sm text-center">
+            <a
+              href="https://veiling.com.br/wp-content/uploads/2025/06/celosia-cristata-683f1639bb911.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-400 text-xs hover:underline cursor-pointer select-all inline-block"
+            >
+              https://veiling.com.br/wp-content/uploads/2025/06/celosia-cristata-683f1639bb911.jpg
+            </a>
           </div>
         )}
       </div>
