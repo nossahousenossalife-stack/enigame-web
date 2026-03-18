@@ -94,88 +94,82 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
   };
 
   return (
-    <div className="w-full h-screen flex flex-col bg-black text-white overflow-hidden">
-      {/* Header com título e fase */}
-      <div className="text-center py-3 border-b-2 border-lime-400">
-        <h1 className="text-xl md:text-2xl font-bold arcade-neon-yellow" style={{ fontFamily: "'Press Start 2P', cursive" }}>
+    <div className="w-full h-screen flex flex-col bg-black text-white overflow-hidden p-4">
+      {/* Header */}
+      <div className="text-center py-2 mb-2">
+        <h1 className="text-lg md:text-xl font-bold arcade-neon-yellow" style={{ fontFamily: "'Press Start 2P', cursive" }}>
           {phase.title}
         </h1>
       </div>
 
-      {/* Conteúdo Principal - Flex para distribuir espaço */}
-      <div className="flex-1 flex flex-col md:flex-row gap-4 p-4 overflow-hidden">
-        {/* Imagem - Esquerda */}
-        <div className="w-full md:w-1/2 flex items-center justify-center">
-          <div className="arcade-border p-2 bg-gray-900 w-full h-full flex items-center justify-center">
-            <img
-              src={phase.imageUrl}
-              alt={`Enigma - ${phase.title}`}
-              className="w-full h-full object-contain scanlines"
+      {/* Conteúdo Principal */}
+      <div className="flex-1 flex flex-col items-center justify-start overflow-y-auto">
+        
+        {/* Imagem - Tamanho limitado */}
+        <div className="arcade-border p-2 bg-gray-900 mb-4" style={{ maxWidth: '400px', maxHeight: '300px' }}>
+          <img
+            src={phase.imageUrl}
+            alt={`Enigma - ${phase.title}`}
+            className="w-full h-full object-contain scanlines"
+          />
+        </div>
+
+        {/* Pergunta se existir */}
+        {phase.question && (
+          <div className="text-center mb-3 max-w-sm">
+            <p className="arcade-neon-cyan text-sm">
+              {phase.question}
+            </p>
+          </div>
+        )}
+
+        {/* Balão de Dica Alternativa */}
+        {alternativeHintMessage && (
+          <div className="arcade-border p-3 bg-gray-900 text-center mb-3 max-w-sm">
+            <p className="arcade-neon-cyan text-xs md:text-sm">
+              💬 {alternativeHintMessage}
+            </p>
+          </div>
+        )}
+
+        {/* Answer Form */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-full max-w-sm">
+          <div className="arcade-border p-2 bg-gray-900">
+            <input
+              type="text"
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              placeholder="Digite sua resposta..."
+              className="w-full bg-gray-800 text-lime-400 font-mono p-2 border-2 border-lime-400 focus:outline-none arcade-neon-green text-xs"
+              autoFocus
             />
           </div>
-        </div>
 
-        {/* Formulário e Dicas - Direita */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center gap-3">
-          {/* Pergunta se existir */}
-          {phase.question && (
-            <div className="text-center">
-              <p className="arcade-neon-cyan text-sm md:text-base">
-                {phase.question}
-              </p>
-            </div>
-          )}
+          <button
+            type="submit"
+            className="arcade-border p-2 bg-gray-900 text-lime-400 font-bold text-xs transition-all hover:shadow-lg hover:shadow-lime-400 arcade-neon-green"
+            style={{ fontFamily: "'Press Start 2P', cursive" }}
+          >
+            ENVIAR
+          </button>
+        </form>
 
-          {/* Balão de Dica Alternativa - ACIMA da caixa */}
-          {alternativeHintMessage && (
-            <div className="arcade-border p-3 bg-gray-900 text-center">
-              <p className="arcade-neon-cyan text-xs md:text-sm">
-                💬 {alternativeHintMessage}
-              </p>
-            </div>
-          )}
+        {/* Botão de Dica */}
+        <button
+          onClick={() => setShowHint(!showHint)}
+          className="arcade-border p-2 bg-gray-900 text-fuchsia-500 font-mono text-xs transition-all hover:shadow-lg hover:shadow-fuchsia-500 arcade-neon-magenta mt-2 w-full max-w-sm"
+        >
+          {showHint ? 'Ocultar Dica' : 'Mostrar Dica'}
+        </button>
 
-          {/* Answer Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-            <div className="arcade-border p-2 bg-gray-900">
-              <input
-                type="text"
-                value={answer}
-                onChange={(e) => setAnswer(e.target.value)}
-                placeholder="Digite sua resposta..."
-                className="w-full bg-gray-800 text-lime-400 font-mono p-2 border-2 border-lime-400 focus:outline-none arcade-neon-green text-sm"
-                autoFocus
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="arcade-border p-2 bg-gray-900 text-lime-400 font-bold text-sm transition-all hover:shadow-lg hover:shadow-lime-400 arcade-neon-green"
-              style={{ fontFamily: "'Press Start 2P', cursive" }}
-            >
-              ENVIAR
-            </button>
-          </form>
-
-          {/* Dica e Botões */}
-          <div className="flex gap-2">
-            <button
-              onClick={() => setShowHint(!showHint)}
-              className="flex-1 arcade-border p-2 bg-gray-900 text-fuchsia-500 font-mono text-xs transition-all hover:shadow-lg hover:shadow-fuchsia-500 arcade-neon-magenta"
-            >
-              {showHint ? 'Ocultar' : 'Dica'}
-            </button>
+        {/* Hint */}
+        {showHint && (
+          <div className="arcade-border p-2 bg-gray-900 text-center mt-2 max-w-sm">
+            <p className="arcade-neon-magenta text-xs md:text-sm">
+              💡 {phase.hint}
+            </p>
           </div>
-
-          {/* Hint */}
-          {showHint && (
-            <div className="arcade-border p-2 bg-gray-900 text-center">
-              <p className="arcade-neon-magenta text-xs md:text-sm">
-                💡 {phase.hint}
-              </p>
-            </div>
-          )}
-        </div>
+        )}
       </div>
     </div>
   );
