@@ -142,7 +142,17 @@ export const phases: Phase[] = [
       { keywords: ['16', 'boss', 'planta'], message: 'O número da fase é um boss, além de uma planta?' },
     ],
   },
-  // Fases 12-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 12,
+    url: '/salvarcomo...',
+    title: 'FASE 12',
+    question: '',
+    answer: 'mineirinho',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/acondroplasia-8TMW6P5pvReA3W5cn3bPtN.webp',
+    hint: 'goma de mascar',
+    alternativeHints: [],
+  },
+  // Fases 13-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
