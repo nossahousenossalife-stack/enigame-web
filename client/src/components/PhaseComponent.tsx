@@ -10,6 +10,7 @@ interface PhaseComponentProps {
 export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponentProps) {
   const [answer, setAnswer] = useState('');
   const [showHint, setShowHint] = useState(false);
+  const [alternativeHintMessage, setAlternativeHintMessage] = useState<string | null>(null);
   const konamiSequence = useRef<string[]>([]);
 
   // Konami Code: Cima, Cima, Baixo, Baixo, Esquerda, Direita, Esquerda, Direita, B, A
@@ -19,6 +20,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
   useEffect(() => {
     setAnswer('');
     setShowHint(false);
+    setAlternativeHintMessage(null);
     konamiSequence.current = [];
   }, [phase.id]);
 
@@ -62,9 +64,31 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
 
     if (checkAnswer(answer, phase.answer)) {
       toast.success('🎎 Resposta correta! Você avançou!');
+      setAlternativeHintMessage(null);
       onCorrectAnswer();
     } else {
-      toast.error('❌ Resposta incorreta. Tente novamente!');
+      // Verificar se há dicas alternativas
+      const userAnswerLower = answer.toLowerCase().trim();
+      let foundAlternativeHint = null;
+
+      if (phase.alternativeHints) {
+        for (const altHint of phase.alternativeHints) {
+          for (const keyword of altHint.keywords) {
+            if (userAnswerLower.includes(keyword.toLowerCase())) {
+              foundAlternativeHint = altHint.message;
+              break;
+            }
+          }
+          if (foundAlternativeHint) break;
+        }
+      }
+
+      if (foundAlternativeHint) {
+        setAlternativeHintMessage(foundAlternativeHint);
+      } else {
+        toast.error('❌ Resposta incorreta. Tente novamente!');
+        setAlternativeHintMessage(null);
+      }
       setAnswer('');
     }
   };
@@ -128,6 +152,15 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
         <div className="arcade-border p-4 bg-gray-900 max-w-md text-center">
           <p className="arcade-neon-magenta text-sm md:text-base">
             💡 Dica: {phase.hint}
+          </p>
+        </div>
+      )}
+
+      {/* Alternative Hint */}
+      {alternativeHintMessage && (
+        <div className="arcade-border p-4 bg-gray-900 max-w-md text-center">
+          <p className="arcade-neon-cyan text-sm md:text-base">
+            💬 {alternativeHintMessage}
           </p>
         </div>
       )}

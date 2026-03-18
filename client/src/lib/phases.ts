@@ -6,6 +6,7 @@ export interface Phase {
   answer: string;
   imageUrl: string;
   hint: string;
+  alternativeHints?: Array<{ keywords: string[]; message: string }>;
 }
 
 export const phases: Phase[] = [
@@ -17,15 +18,22 @@ export const phases: Phase[] = [
     answer: 'mario',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase1-kart-mario-54vf4ipchWCfcqzu6gr4qz.webp',
     hint: 'Cano',
+    alternativeHints: [
+      { keywords: ['mario kart', 'kart'], message: 'Somente o encanador' },
+    ],
   },
   {
     id: 2,
-    url: '/sacodogoleiro',
+    url: '/deluxe',
     title: 'FASE 2',
     question: '',
     answer: 'deluxe',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase2-allejo-gol-KLcHkcvwAvhRU4yWtyC6db.webp',
     hint: 'International..... ultima palavra',
+    alternativeHints: [
+      { keywords: ['futebol', 'soccer', 'international superstar soccer'], message: 'Mas qual? Na época do SNES' },
+      { keywords: ['international superstar soccer', 'soccer'], message: 'Lembra da dica? Só preciso da última palavra' },
+    ],
   },
   {
     id: 3,
@@ -35,6 +43,9 @@ export const phases: Phase[] = [
     answer: 'mercador',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase3-mercador-comum-KjeHrpgiRVfHeYs5KUJw2Z.webp',
     hint: 'stranger',
+    alternativeHints: [
+      { keywords: ['resident evil', 'leon', 'resident evil 4'], message: 'Somente o vendedor' },
+    ],
   },
   {
     id: 4,
@@ -44,6 +55,9 @@ export const phases: Phase[] = [
     answer: 'bomba patch',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase4-custom-cropped_e707ea8f.png',
     hint: 'É ruim',
+    alternativeHints: [
+      { keywords: ['matrix'], message: 'Sério? Não cara. C4 é um tipo de?' },
+    ],
   },
   {
     id: 5,
@@ -53,6 +67,9 @@ export const phases: Phase[] = [
     answer: 'saria song',
     imageUrl: 'https://iili.io/qhf8E3g.png',
     hint: 'Base',
+    alternativeHints: [
+      { keywords: ['zelda', 'link', 'the legend of zelda', 'ocarina of time', 'ocarina'], message: 'É música para meus ouvidos' },
+    ],
   },
   {
     id: 6,
@@ -62,6 +79,9 @@ export const phases: Phase[] = [
     answer: 'bowser',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase6-bowser-browsers-ahjvEXuGaL9m3XUHrqERuc.webp',
     hint: 'BOSS',
+    alternativeHints: [
+      { keywords: ['navegador'], message: 'Boss em inglês é o que?' },
+    ],
   },
   {
     id: 7,
@@ -71,6 +91,9 @@ export const phases: Phase[] = [
     answer: 'atreus',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase7-god-of-war-v4-Q7erZ629nCm7mBqcW5GUv5.webp',
     hint: 'filho',
+    alternativeHints: [
+      { keywords: ['silent hill', 'pyramid head'], message: 'Jogão, mas não é isso. Nome da banda de rock, é o segundo nome do game' },
+    ],
   },
   {
     id: 8,
@@ -80,6 +103,7 @@ export const phases: Phase[] = [
     answer: 'origin',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase8-pyramid-head-egito-Nh9reS3g5RaiAtdgiG7x6P.webp',
     hint: 'My sacrifice',
+    alternativeHints: [],
   },
   // Fases 9-20 serão adicionadas conforme você enviar os dados
 ];
