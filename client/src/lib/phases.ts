@@ -51,7 +51,7 @@ export const phases: Phase[] = [
     title: 'FASE 5',
     question: '',
     answer: 'saria song',
-    imageUrl: 'https://iili.io/qhf8E3g.md.png',
+    imageUrl: 'https://iili.io/qhf8E3g.png',
     hint: 'Base',
   },
   {
