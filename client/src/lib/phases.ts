@@ -148,7 +148,7 @@ export const phases: Phase[] = [
     title: 'FASE 12',
     question: '',
     answer: 'mineirinho',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/acondroplasia-8TMW6P5pvReA3W5cn3bPtN.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/acondroplasia-oFBewWg897suH2oiXjPxpe.webp',
     hint: 'goma de mascar',
     alternativeHints: [],
   },
