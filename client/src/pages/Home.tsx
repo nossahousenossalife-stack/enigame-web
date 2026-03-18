@@ -3,6 +3,7 @@ import { useLocation } from 'wouter';
 import BrowserSimulator from '@/components/BrowserSimulator';
 import PhaseComponent from '@/components/PhaseComponent';
 import Footer from '@/components/Footer';
+import { ChallengeModal } from '@/components/ChallengeModal';
 import { phases, getPhaseByUrl } from '@/lib/phases';
 import type { Phase } from '@/lib/phases';
 import { toast } from 'sonner';
@@ -11,6 +12,7 @@ export default function Home() {
   const [location, setLocation] = useLocation();
   const [currentPhase, setCurrentPhase] = useState<Phase | null>(null);
   const [phaseNotFound, setPhaseNotFound] = useState(false);
+  const [showChallengeModal, setShowChallengeModal] = useState(false);
 
   // Parse current path from location
   useEffect(() => {
@@ -36,13 +38,35 @@ export default function Home() {
   };
 
   const handlePhaseComplete = () => {
-    // Navegar para a próxima fase baseado no ID da fase atual
+    // Se eh a fase 10, mostrar modal de desafio
+    if (currentPhase && currentPhase.id === 10) {
+      setShowChallengeModal(true);
+      return;
+    }
+    
+    // Navegar para a proxima fase baseado no ID da fase atual
     if (currentPhase && currentPhase.id < 20) {
       const nextPhase = phases.find((p) => p.id === currentPhase.id + 1);
       if (nextPhase) {
         setLocation(nextPhase.url);
       }
     }
+  };
+
+  const handleChallengeYes = () => {
+    setShowChallengeModal(false);
+    // Navegar para fase 11
+    const nextPhase = phases.find((p) => p.id === 11);
+    if (nextPhase) {
+      setLocation(nextPhase.url);
+    }
+  };
+
+  const handleChallengeNo = () => {
+    setShowChallengeModal(false);
+    // Mostrar mensagem e voltar ao menu
+    toast.success('Obrigado pelo seu tempo, quero te conhecer. Mande mensagem no instagram @matfreixo e diga sua experiencia com o Enigame.');
+    setLocation('/');
   };
 
   return (
@@ -86,7 +110,12 @@ export default function Home() {
         )}
 
         {currentPhase && (
-          <PhaseComponent phase={currentPhase} onCorrectAnswer={handlePhaseComplete} />
+          <>
+            <PhaseComponent phase={currentPhase} onCorrectAnswer={handlePhaseComplete} />
+            {showChallengeModal && (
+              <ChallengeModal onYes={handleChallengeYes} onNo={handleChallengeNo} />
+            )}
+          </>
         )}
 
         {phaseNotFound && (
