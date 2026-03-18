@@ -100,7 +100,7 @@ export const phases: Phase[] = [
     url: '/matador',
     title: 'FASE 8',
     question: '',
-    answer: 'origin',
+    answer: 'origins',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase8-pyramid-head-egito-Nh9reS3g5RaiAtdgiG7x6P.webp',
     hint: 'My sacrifice',
     alternativeHints: [
