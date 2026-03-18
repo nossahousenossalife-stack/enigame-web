@@ -92,8 +92,7 @@ export const phases: Phase[] = [
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase7-god-of-war-v4-Q7erZ629nCm7mBqcW5GUv5.webp',
     hint: 'filho',
     alternativeHints: [
-      { keywords: ['controle', 'bolinha', 'circulo', 'gta'], message: 'Não, pelos Deuses' },
-      { keywords: ['silent hill', 'pyramid head'], message: 'Jogão, mas não é isso. Nome da banda de rock, é o segundo nome do game' },
+      { keywords: ['bolinha', 'circulo', 'god of war', 'gta', 'controle'], message: 'Não cara, Pelos Deuses' },
     ],
   },
   {
@@ -105,7 +104,7 @@ export const phases: Phase[] = [
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase8-pyramid-head-egito-Nh9reS3g5RaiAtdgiG7x6P.webp',
     hint: 'My sacrifice',
     alternativeHints: [
-      { keywords: ['pyramid head', 'piramide', 'egito', 'silent hill'], message: 'Jogaço. Mas a banda dona dessa música tem no nome' },
+      { keywords: ['silent hill', 'piramid head', 'egito'], message: 'A banda dona dessa música tem no nome do game' },
     ],
   },
   // Fases 9-20 serão adicionadas conforme você enviar os dados
