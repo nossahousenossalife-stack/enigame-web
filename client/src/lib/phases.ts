@@ -107,7 +107,17 @@ export const phases: Phase[] = [
       { keywords: ['silent hill', 'piramid head', 'egito'], message: 'A banda dona dessa música tem no nome do game' },
     ],
   },
-  // Fases 9-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 9,
+    url: '/eht',
+    title: 'FASE 9',
+    question: '',
+    answer: 'the sims',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase9-sims-poema-c5ZrM79sCPTXr7yfrcKZhJ.webp',
+    hint: 'Existem 4?',
+    alternativeHints: [],
+  },
+  // Fases 10-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
