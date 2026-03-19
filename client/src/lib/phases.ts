@@ -153,7 +153,19 @@ export const phases: Phase[] = [
     hint: 'goma de mascar',
     alternativeHints: [],
   },
-  // Fases 13-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 13,
+    url: '/HEX',
+    title: 'FASE 13',
+    question: '',
+    answer: 'donatello',
+    imageUrl: 'https://iili.io/qwRJBPS.png',
+    hint: 'Ele e mais 3',
+    alternativeHints: [
+      { keywords: ['raphael', 'rafael', 'leonardo', 'michelangelo', 'tartaruga ninja', 'tartaruga'], message: 'não, foca no bastão...lá ele!' },
+    ],
+  },
+  // Fases 14-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
