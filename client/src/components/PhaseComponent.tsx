@@ -28,6 +28,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
+      audioRef.current = null;
     }
 
     // Se a fase tem áudio, criar e reproduzir em loop
@@ -36,7 +37,12 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
       audio.volume = 0.3; // Volume em 30%
       audio.loop = true; // Ativar loop
       audioRef.current = audio;
-      audio.play().catch((err) => console.log('Erro ao reproduzir áudio:', err));
+      // Aguardar um pouco para garantir que o áudio está pronto
+      setTimeout(() => {
+        if (audioRef.current) {
+          audioRef.current.play().catch((err) => console.log('Erro ao reproduzir áudio:', err));
+        }
+      }, 100);
     }
 
     return () => {
@@ -93,6 +99,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
+        audioRef.current = null;
       }
       onCorrectAnswer();
     } else {
@@ -128,6 +135,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
+        audioRef.current = null;
       }
     };
   }, []);
