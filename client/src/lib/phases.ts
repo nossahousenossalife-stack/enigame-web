@@ -179,7 +179,17 @@ export const phases: Phase[] = [
       { keywords: ['clair obscur expedition 33', 'expedition 33'], message: 'só quero as 2 primeiras palavras' },
     ],
   },
-  // Fases 15-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 15,
+    url: '/a.cd.c',
+    title: 'FASE 15',
+    question: '',
+    answer: 'epoch',
+    imageUrl: 'https://iili.io/qw0YcR2.th.webp',
+    hint: '12ka.c',
+    alternativeHints: [],
+  },
+  // Fases 16-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
