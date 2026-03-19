@@ -30,10 +30,11 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
       audioRef.current.currentTime = 0;
     }
 
-    // Se a fase tem áudio, criar e reproduzir
+    // Se a fase tem áudio, criar e reproduzir em loop
     if (phase.audioUrl) {
       const audio = new Audio(phase.audioUrl);
       audio.volume = 0.3; // Volume em 30%
+      audio.loop = true; // Ativar loop
       audioRef.current = audio;
       audio.play().catch((err) => console.log('Erro ao reproduzir áudio:', err));
     }
