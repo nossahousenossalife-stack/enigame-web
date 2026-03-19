@@ -187,7 +187,9 @@ export const phases: Phase[] = [
     answer: 'epoch',
     imageUrl: 'https://iili.io/qw0YcR2.webp',
     hint: '12ka.c',
-    alternativeHints: [],
+    alternativeHints: [
+      { keywords: ['chrono trigger', 'cronos', 'crono', 'chrono'], message: 'Quase isso, me leve para viajar...' },
+    ],
   },
   // Fases 16-20 serão adicionadas conforme você enviar os dados
 ];
