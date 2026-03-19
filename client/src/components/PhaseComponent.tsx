@@ -12,17 +12,39 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
   const [showHint, setShowHint] = useState(false);
   const [alternativeHintMessage, setAlternativeHintMessage] = useState<string | null>(null);
   const konamiSequence = useRef<string[]>([]);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Konami Code: Cima, Cima, Baixo, Baixo, Esquerda, Direita, Esquerda, Direita, B, A
   const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
-  // Limpar o campo de resposta quando a fase mudar
+  // Limpar o campo de resposta quando a fase mudar e gerenciar áudio
   useEffect(() => {
     setAnswer('');
     setShowHint(false);
     setAlternativeHintMessage(null);
     konamiSequence.current = [];
-  }, [phase.id]);
+
+    // Parar áudio anterior se existir
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
+    // Se a fase tem áudio, criar e reproduzir
+    if (phase.audioUrl) {
+      const audio = new Audio(phase.audioUrl);
+      audioRef.current = audio;
+      audio.play().catch((err) => console.log('Erro ao reproduzir áudio:', err));
+    }
+
+    return () => {
+      // Parar áudio ao sair da fase
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, [phase.id, phase.audioUrl]);
 
   // Detectar Konami Code
   useEffect(() => {
@@ -65,6 +87,11 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
     if (checkAnswer(answer, phase.answer, phase.id)) {
       toast.success('🎎 Resposta correta! Você avançou!');
       setAlternativeHintMessage(null);
+      // Parar áudio ao avançar de fase
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
       onCorrectAnswer();
     } else {
       // Verificar se há dicas alternativas
@@ -93,8 +120,27 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
     }
   };
 
+  // Cleanup ao desmontar
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, []);
+
   return (
     <div className="w-full h-screen flex flex-col bg-black text-white overflow-hidden p-4">
+      {/* Audio player invisível para a Fase 14 */}
+      {phase.audioUrl && (
+        <audio
+          ref={audioRef}
+          src={phase.audioUrl}
+          loop={false}
+          style={{ display: 'none' }}
+        />
+      )}
       {/* Header */}
       <div className="text-center py-2 mb-2">
         <h1 className="text-lg md:text-xl font-bold arcade-neon-yellow" style={{ fontFamily: "'Press Start 2P', cursive" }}>

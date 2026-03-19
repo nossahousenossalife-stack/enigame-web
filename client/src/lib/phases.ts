@@ -7,6 +7,7 @@ export interface Phase {
   imageUrl: string;
   hint: string;
   alternativeHints?: Array<{ keywords: string[]; message: string }>;
+  audioUrl?: string;
 }
 
 export const phases: Phase[] = [
@@ -165,7 +166,20 @@ export const phases: Phase[] = [
       { keywords: ['raphael', 'rafael', 'leonardo', 'michelangelo', 'tartaruga ninja', 'tartaruga'], message: 'não, foca no bastão...lá ele!' },
     ],
   },
-  // Fases 14-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 14,
+    url: '/+33',
+    title: 'FASE 14',
+    question: '',
+    answer: 'clair obscur',
+    imageUrl: 'https://iili.io/qw7fdNt.th.png',
+    hint: 'Empilhadeira se usa muito nesse setor',
+    audioUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase14-audio_32aa1376.mp3',
+    alternativeHints: [
+      { keywords: ['clair obscur expedition 33', 'expedition 33'], message: 'só quero as 2 primeiras palavras' },
+    ],
+  },
+  // Fases 15-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
