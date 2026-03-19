@@ -191,7 +191,19 @@ export const phases: Phase[] = [
       { keywords: ['chrono trigger', 'cronos', 'crono', 'chrono'], message: 'Quase isso, me leve para viajar...' },
     ],
   },
-  // Fases 16-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 16,
+    url: '/christophrudolff',
+    title: 'FASE 16',
+    question: '',
+    answer: '47',
+    imageUrl: 'https://iili.io/qNdjPTb.png',
+    hint: '',
+    alternativeHints: [
+      { keywords: ['hitman', 'pokemon'], message: 'AGENTE não esperava por isso = 2.209' },
+    ],
+  },
+  // Fases 17-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
