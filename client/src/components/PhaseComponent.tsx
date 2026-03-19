@@ -33,7 +33,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
     // Se a fase tem áudio, criar e reproduzir
     if (phase.audioUrl) {
       const audio = new Audio(phase.audioUrl);
-      audio.volume = 0.25; // Volume em 25%
+      audio.volume = 0.3; // Volume em 30%
       audioRef.current = audio;
       audio.play().catch((err) => console.log('Erro ao reproduzir áudio:', err));
     }
