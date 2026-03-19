@@ -172,7 +172,7 @@ export const phases: Phase[] = [
     title: 'FASE 14',
     question: '',
     answer: 'clair obscur',
-    imageUrl: 'https://iili.io/qw7fdNt.th.png',
+    imageUrl: 'https://iili.io/qw7fdNt.png',
     hint: 'Empilhadeira se usa muito nesse setor',
     audioUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase14-audio_32aa1376.mp3',
     alternativeHints: [
