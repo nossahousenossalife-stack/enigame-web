@@ -185,7 +185,7 @@ export const phases: Phase[] = [
     title: 'FASE 15',
     question: '',
     answer: 'epoch',
-    imageUrl: 'https://iili.io/qw0YcR2.th.webp',
+    imageUrl: 'https://iili.io/qw0YcR2.webp',
     hint: '12ka.c',
     alternativeHints: [],
   },
