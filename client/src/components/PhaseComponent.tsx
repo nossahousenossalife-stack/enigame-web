@@ -33,6 +33,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
     // Se a fase tem áudio, criar e reproduzir
     if (phase.audioUrl) {
       const audio = new Audio(phase.audioUrl);
+      audio.volume = 0.5; // Volume em 50%
       audioRef.current = audio;
       audio.play().catch((err) => console.log('Erro ao reproduzir áudio:', err));
     }
@@ -151,8 +152,8 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
       {/* Conteúdo Principal */}
       <div className="flex-1 flex flex-col items-center justify-start overflow-y-auto">
         
-        {/* Imagem - Tamanho limitado */}
-        <div className="arcade-border p-2 bg-gray-900 mb-4" style={{ maxWidth: '400px', maxHeight: '300px' }}>
+        {/* Imagem - Tamanho ampliado */}
+        <div className="arcade-border p-2 bg-gray-900 mb-4" style={{ maxWidth: '90vw', maxHeight: '60vh', width: '100%' }}>
           <img
             src={phase.imageUrl}
             alt={`Enigma - ${phase.title}`}
