@@ -17,7 +17,7 @@ export const phases: Phase[] = [
     title: 'FASE 1',
     question: 'Essa é o tutorial',
     answer: 'mario',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase1-kart-mario-54vf4ipchWCfcqzu6gr4qz.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_7k2m9n4p.webp',
     hint: 'Cano',
     alternativeHints: [
       { keywords: ['mario kart', 'kart'], message: 'Somente o encanador' },
@@ -29,7 +29,7 @@ export const phases: Phase[] = [
     title: 'FASE 2',
     question: '',
     answer: 'deluxe',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase2-allejo-gol-KLcHkcvwAvhRU4yWtyC6db.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_5q8r2x1t.webp',
     hint: 'International..... ultima palavra',
     alternativeHints: [
       { keywords: ['futebol', 'soccer', 'international superstar soccer'], message: 'Mas qual? Na época do SNES' },
@@ -42,7 +42,7 @@ export const phases: Phase[] = [
     title: 'FASE 3',
     question: '',
     answer: 'mercador',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase3-mercador-comum-KjeHrpgiRVfHeYs5KUJw2Z.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_9w3v6h8j.webp',
     hint: 'stranger',
     alternativeHints: [
       { keywords: ['resident evil', 'leon', 'resident evil 4'], message: 'Somente o vendedor' },
@@ -54,7 +54,7 @@ export const phases: Phase[] = [
     title: 'FASE 4',
     question: '',
     answer: 'bomba patch',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase4-custom-cropped_e707ea8f.png',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_2b7c4d9f.png',
     hint: 'É ruim',
     alternativeHints: [
       { keywords: ['matrix'], message: 'Sério? Não cara. C4 é um tipo de?' },
@@ -78,7 +78,7 @@ export const phases: Phase[] = [
     title: 'FASE 6',
     question: '',
     answer: 'bowser',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase6-bowser-browsers-ahjvEXuGaL9m3XUHrqERuc.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_1m5n8k3p.webp',
     hint: 'BOSS',
     alternativeHints: [
       { keywords: ['navegador'], message: 'Boss em inglês é o que?' },
@@ -90,7 +90,7 @@ export const phases: Phase[] = [
     title: 'FASE 7',
     question: '',
     answer: 'atreus',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase7-god-of-war-v4-Q7erZ629nCm7mBqcW5GUv5.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_6j2x9w4r.webp',
     hint: 'filho',
     alternativeHints: [
       { keywords: ['bolinha', 'circulo', 'god of war', 'gta', 'controle'], message: 'Não cara, Pelos Deuses' },
@@ -102,7 +102,7 @@ export const phases: Phase[] = [
     title: 'FASE 8',
     question: '',
     answer: 'origins',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase8-pyramid-head-egito-Nh9reS3g5RaiAtdgiG7x6P.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_3t7m1v5k.webp',
     hint: 'My sacrifice',
     alternativeHints: [
       { keywords: ['silent hill', 'piramid head', 'egito'], message: 'A banda dona dessa música tem no nome do game' },
@@ -114,7 +114,7 @@ export const phases: Phase[] = [
     title: 'FASE 9',
     question: '',
     answer: 'the sims',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase9-sims-poema-corrigido-2fzehmmSJ3rmC2GBUrTxWP.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_8p4n6q2w.webp',
     hint: 'Existem 4?',
     alternativeHints: [],
   },
@@ -124,7 +124,7 @@ export const phases: Phase[] = [
     title: 'FASE 10',
     question: '',
     answer: 'tails',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase10-kurama-caldas-v3-FBvxt9FtPk33nUmssnN696.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_5h3j8m1x.webp',
     hint: 'Esmeralda',
     alternativeHints: [
       { keywords: ['sonic'], message: 'Meu doce preferido é calda de chocolate' },
@@ -136,7 +136,7 @@ export const phases: Phase[] = [
     title: 'FASE 11',
     question: '',
     answer: 'agro',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase11-agro-shadow-PTqkqmCEWytzdPiesJY3Jq.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_9r2k7w4v.webp',
     hint: 'Ponto fraco',
     alternativeHints: [
       { keywords: ['celosia'], message: '...celosia é pop, celosia é tec' },
@@ -150,7 +150,7 @@ export const phases: Phase[] = [
     title: 'FASE 12',
     question: '',
     answer: 'mineirinho',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/acondroplasia-oFBewWg897suH2oiXjPxpe.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_4c6t1m8p.webp',
     hint: 'goma de mascar',
     alternativeHints: [],
   },
