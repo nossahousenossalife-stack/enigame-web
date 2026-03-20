@@ -42,7 +42,7 @@ export const phases: Phase[] = [
     title: 'FASE 3',
     question: '',
     answer: 'mercador',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase3-mercador-comum-KjeHrpgiRVfHeYs5KUJw2Z.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/k7m2p9x4_184ec8bc.webp',
     hint: 'stranger',
     alternativeHints: [
       { keywords: ['resident evil', 'leon', 'resident evil 4'], message: 'Somente o vendedor' },
@@ -78,7 +78,7 @@ export const phases: Phase[] = [
     title: 'FASE 6',
     question: '',
     answer: 'bowser',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase6-bowser-browsers-ahjvEXuGaL9m3XUHrqERuc.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/j3n8w5q1_22055136.webp',
     hint: 'BOSS',
     alternativeHints: [
       { keywords: ['navegador'], message: 'Boss em inglês é o que?' },
@@ -90,7 +90,7 @@ export const phases: Phase[] = [
     title: 'FASE 7',
     question: '',
     answer: 'atreus',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase7-god-of-war-v4-Q7erZ629nCm7mBqcW5GUv5.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/r6t1v9z3_06fef855.webp',
     hint: 'filho',
     alternativeHints: [
       { keywords: ['bolinha', 'circulo', 'god of war', 'gta', 'controle'], message: 'Não cara, Pelos Deuses' },
@@ -114,7 +114,7 @@ export const phases: Phase[] = [
     title: 'FASE 9',
     question: '',
     answer: 'the sims',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase9-sims-poema-corrigido-2fzehmmSJ3rmC2GBUrTxWP.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/b4h7m2c8_3cf4f3c4.webp',
     hint: 'Existem 4?',
     alternativeHints: [],
   },
@@ -136,7 +136,7 @@ export const phases: Phase[] = [
     title: 'FASE 11',
     question: '',
     answer: 'agro',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase11-agro-shadow-PTqkqmCEWytzdPiesJY3Jq.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/f9x2k5p7_b630d069.webp',
     hint: 'Ponto fraco',
     alternativeHints: [
       { keywords: ['celosia'], message: '...celosia é pop, celosia é tec' },
