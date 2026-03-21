@@ -217,7 +217,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
 
         {/* Hint */}
         {showHint && (
-          <div className="arcade-border p-3 bg-gray-900 text-center mt-3 max-w-md">
+          <div className="arcade-border p-3 bg-gray-900 text-center mt-6 mb-4 max-w-md">
             <p className="arcade-neon-magenta text-sm md:text-base">
               💡 {phase.hint}
             </p>
