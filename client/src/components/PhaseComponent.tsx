@@ -10,7 +10,6 @@ interface PhaseComponentProps {
 export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponentProps) {
   const [answer, setAnswer] = useState('');
   const [showHint, setShowHint] = useState(false);
-  const [alternativeHintMessage, setAlternativeHintMessage] = useState<string | null>(null);
   const konamiSequence = useRef<string[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -21,7 +20,6 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
   useEffect(() => {
     setAnswer('');
     setShowHint(false);
-    setAlternativeHintMessage(null);
     konamiSequence.current = [];
 
     // Parar áudio anterior se existir
@@ -94,7 +92,6 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
 
     if (checkAnswer(answer, phase.answer, phase.id)) {
       toast.success('🎎 Resposta correta! Você avançou!');
-      setAlternativeHintMessage(null);
       // Parar áudio ao avançar de fase
       if (audioRef.current) {
         audioRef.current.pause();
@@ -120,10 +117,10 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
       }
 
       if (foundAlternativeHint) {
-        setAlternativeHintMessage(foundAlternativeHint);
+        // Mostrar dica condicional como toast que desaparece em 5 segundos
+        toast.info(foundAlternativeHint, { duration: 5000 });
       } else {
         toast.error('❌ Resposta incorreta. Tente novamente!');
-        setAlternativeHintMessage(null);
       }
       setAnswer('');
     }
@@ -175,15 +172,6 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
           <div className="text-center mb-3 max-w-sm">
             <p className="arcade-neon-cyan text-sm">
               {phase.question}
-            </p>
-          </div>
-        )}
-
-        {/* Balão de Dica Alternativa */}
-        {alternativeHintMessage && (
-          <div className="arcade-border p-3 bg-gray-900 text-center mb-3 max-w-sm">
-            <p className="arcade-neon-cyan text-xs md:text-sm">
-              💬 {alternativeHintMessage}
             </p>
           </div>
         )}
