@@ -10,6 +10,7 @@ interface PhaseComponentProps {
 export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponentProps) {
   const [answer, setAnswer] = useState('');
   const [showHint, setShowHint] = useState(false);
+  const [alternativeHintMessage, setAlternativeHintMessage] = useState<string | null>(null);
   const konamiSequence = useRef<string[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -76,7 +77,6 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
         });
 
         if (isKonamiCode && phase.id === 2) {
-          toast.success('🎮 KONAMI CODE ATIVADO! Resposta revelada: deluxe');
           setAnswer('deluxe');
           konamiSequence.current = [];
         }
@@ -91,7 +91,6 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
     e.preventDefault();
 
     if (checkAnswer(answer, phase.answer, phase.id)) {
-      toast.success('🎎 Resposta correta! Você avançou!');
       // Parar áudio ao avançar de fase
       if (audioRef.current) {
         audioRef.current.pause();
@@ -117,8 +116,10 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
       }
 
       if (foundAlternativeHint) {
-        // Mostrar dica condicional como toast que desaparece em 5 segundos
-        toast.info(foundAlternativeHint, { duration: 5000 });
+        // Mostrar dica condicional como popup modal
+        setAlternativeHintMessage(foundAlternativeHint);
+        // Fechar popup após 5 segundos
+        setTimeout(() => setAlternativeHintMessage(null), 5000);
       } else {
         toast.error('❌ Resposta incorreta. Tente novamente!');
       }
@@ -136,6 +137,13 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
       }
     };
   }, []);
+
+  // Fechar modal ao clicar fora
+  const handleModalClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      setAlternativeHintMessage(null);
+    }
+  };
 
   return (
     <div className="w-full h-screen flex flex-col bg-black text-white overflow-hidden p-4">
@@ -189,29 +197,41 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
             />
           </div>
 
-          <button
-            type="submit"
-            className="arcade-border p-2 bg-gray-900 text-lime-400 font-bold text-xs transition-all hover:shadow-lg hover:shadow-lime-400 arcade-neon-green"
-            style={{ fontFamily: "'Press Start 2P', cursive" }}
-          >
-            ENVIAR
-          </button>
+          <div className="flex gap-2 w-full">
+            <button
+              type="submit"
+              className="flex-1 arcade-border p-2 bg-gray-900 text-lime-400 font-bold text-xs transition-all hover:shadow-lg hover:shadow-lime-400 arcade-neon-green"
+              style={{ fontFamily: "'Press Start 2P', cursive" }}
+            >
+              ENVIAR
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowHint(!showHint)}
+              className="flex-1 arcade-border p-2 bg-gray-900 text-fuchsia-500 font-mono text-xs transition-all hover:shadow-lg hover:shadow-fuchsia-500 arcade-neon-magenta"
+            >
+              {showHint ? 'Ocultar' : 'Dica'}
+            </button>
+          </div>
         </form>
-
-        {/* Botão de Dica */}
-        <button
-          onClick={() => setShowHint(!showHint)}
-          className="arcade-border p-2 bg-gray-900 text-fuchsia-500 font-mono text-xs transition-all hover:shadow-lg hover:shadow-fuchsia-500 arcade-neon-magenta mt-2 w-full max-w-sm"
-        >
-          {showHint ? 'Ocultar Dica' : 'Mostrar Dica'}
-        </button>
 
         {/* Hint */}
         {showHint && (
-          <div className="arcade-border p-2 bg-gray-900 text-center mt-2 max-w-sm">
-            <p className="arcade-neon-magenta text-xs md:text-sm">
+          <div className="arcade-border p-3 bg-gray-900 text-center mt-3 max-w-md">
+            <p className="arcade-neon-magenta text-sm md:text-base">
               💡 {phase.hint}
             </p>
+          </div>
+        )}
+
+        {/* Modal para Dica Condicional */}
+        {alternativeHintMessage && (
+          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50" onClick={handleModalClick}>
+            <div className="arcade-border p-6 bg-gray-900 text-center max-w-lg w-11/12">
+              <p className="arcade-neon-cyan text-base md:text-lg">
+                💬 {alternativeHintMessage}
+              </p>
+            </div>
           </div>
         )}
         
@@ -222,7 +242,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
               href="https://veiling.com.br/wp-content/uploads/2025/06/celosia-cristata-683f1639bb911.jpg"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black text-xs hover:underline cursor-pointer select-all inline-block"
+              className="text-cyan-400 text-xs hover:underline cursor-pointer select-all inline-block"
             >
               https://veiling.com.br/wp-content/uploads/2025/06/celosia-cristata-683f1639bb911.jpg
             </a>
