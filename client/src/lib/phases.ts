@@ -198,7 +198,7 @@ export const phases: Phase[] = [
     question: '',
     answer: '47',
     imageUrl: 'https://iili.io/qNdjPTb.png',
-    hint: '',
+    hint: '47',
     alternativeHints: [
       { keywords: ['hitman', 'pokemon'], message: 'AGENTE não esperava por isso = 2.209' },
     ],
