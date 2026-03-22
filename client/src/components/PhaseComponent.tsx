@@ -146,7 +146,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col bg-black text-white overflow-y-auto p-4">
+    <div className="w-full h-screen flex flex-col bg-black text-white overflow-hidden p-4">
       {/* Audio player invisível para a Fase 14 */}
       {phase.audioUrl && (
         <audio
@@ -164,7 +164,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
       </div>
 
       {/* Conteúdo Principal */}
-      <div className="flex flex-col items-center justify-start w-full">
+      <div className="flex-1 flex flex-col items-center justify-start overflow-y-auto pt-20">
         
         {/* Imagem - Tamanho ampliado */}
         <div className="arcade-border p-2 bg-gray-900 mb-4" style={{ maxWidth: '90vw', maxHeight: '60vh', width: '100%' }}>
