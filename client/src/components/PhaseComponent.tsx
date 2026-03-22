@@ -164,7 +164,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
       </div>
 
       {/* Conteúdo Principal */}
-      <div className="flex-1 flex flex-col items-center justify-start overflow-y-auto">
+      <div className="flex-1 flex flex-col items-center justify-start overflow-y-auto pt-8">
         
         {/* Imagem - Tamanho ampliado */}
         <div className="arcade-border p-2 bg-gray-900 mb-4" style={{ maxWidth: '90vw', maxHeight: '60vh', width: '100%' }}>
