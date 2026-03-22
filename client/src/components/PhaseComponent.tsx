@@ -200,7 +200,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
           <div className="flex gap-2 w-full">
             <button
               type="submit"
-              className="flex-1 arcade-border p-2 bg-gray-900 text-lime-400 font-bold text-xs transition-all hover:shadow-lg hover:shadow-lime-400 arcade-neon-green"
+              className="flex-1 arcade-border py-3 px-2 bg-gray-900 text-lime-400 font-bold text-xs transition-all hover:shadow-lg hover:shadow-lime-400 arcade-neon-green"
               style={{ fontFamily: "'Press Start 2P', cursive" }}
             >
               ENVIAR
@@ -208,7 +208,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
             <button
               type="button"
               onClick={() => setShowHint(!showHint)}
-              className="flex-1 arcade-border p-2 bg-gray-900 text-fuchsia-500 font-mono text-xs transition-all hover:shadow-lg hover:shadow-fuchsia-500 arcade-neon-magenta"
+              className="flex-1 arcade-border py-3 px-2 bg-gray-900 text-fuchsia-500 font-mono text-xs transition-all hover:shadow-lg hover:shadow-fuchsia-500 arcade-neon-magenta"
             >
               {showHint ? 'Ocultar' : 'Dica'}
             </button>
