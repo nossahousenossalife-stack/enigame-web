@@ -226,7 +226,7 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
 
         {/* Modal para Dica Condicional */}
         {alternativeHintMessage && (
-          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50" onClick={handleModalClick}>
+          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 pt-40" onClick={handleModalClick}>
             <div className="arcade-border p-6 bg-gray-900 text-center max-w-lg w-11/12">
               <p className="arcade-neon-cyan text-base md:text-lg">
                 💬 {alternativeHintMessage}
