@@ -215,7 +215,16 @@ export const phases: Phase[] = [
       { keywords: ['mortal kombat'], message: 'Pra passar dessa fase, somente com macete' },
     ],
   },
-  // Fases 18-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 18,
+    url: '/juntosteremos',
+    title: 'FASE 18',
+    question: '',
+    answer: 'ditto',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_fase18_d2c707d8.png',
+    hint: '#1...2',
+  },
+  // Fases 19-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
