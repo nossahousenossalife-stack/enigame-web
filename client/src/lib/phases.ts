@@ -223,6 +223,9 @@ export const phases: Phase[] = [
     answer: 'ditto',
     imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_fase18_d2c707d8.png',
     hint: '#1...2',
+    alternativeHints: [
+      { keywords: ['pokemon'], message: 'Copiou essa resposta de onde?' },
+    ],
   },
   // Fases 19-20 serão adicionadas conforme você enviar os dados
 ];
