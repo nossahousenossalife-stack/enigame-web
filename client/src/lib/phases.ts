@@ -209,7 +209,7 @@ export const phases: Phase[] = [
     title: 'FASE 17',
     question: '',
     answer: 'kool stuff',
-    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_fase17-WfUb5KVxDHNMaqXg3hC6CL.webp',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/pasted_file_EQ4oY8_image_872ac2e1.png',
     hint: '1992',
     alternativeHints: [
       { keywords: ['mortal kombat'], message: 'Pra passar dessa fase, somente com macete' },
