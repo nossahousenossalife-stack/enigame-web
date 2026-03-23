@@ -203,7 +203,19 @@ export const phases: Phase[] = [
       { keywords: ['hitman', 'pokemon'], message: 'AGENTE não esperava por isso = 2.209' },
     ],
   },
-  // Fases 17-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 17,
+    url: '/erehrevoteg',
+    title: 'FASE 17',
+    question: '',
+    answer: 'kool stuff',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/enigma_fase17-4UYCP3sRaJwcqdHjkNYjAY.webp',
+    hint: '1992',
+    alternativeHints: [
+      { keywords: ['mortal kombat'], message: 'Pra passar dessa fase, somente com macete' },
+    ],
+  },
+  // Fases 18-20 serão adicionadas conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
