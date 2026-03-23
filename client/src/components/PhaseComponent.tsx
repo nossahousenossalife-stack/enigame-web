@@ -227,14 +227,14 @@ export default function PhaseComponent({ phase, onCorrectAnswer }: PhaseComponen
         {/* Modal para Dica Condicional */}
         {alternativeHintMessage && (
           <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 pt-40" onClick={handleModalClick}>
-            <div className="arcade-border p-4 bg-gray-900 text-center max-w-sm w-11/12 relative">
+            <div className="arcade-border bg-gray-900 text-center max-w-sm w-11/12 relative">
               <button
                 onClick={() => setAlternativeHintMessage(null)}
-                className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white font-bold w-6 h-6 flex items-center justify-center arcade-border text-xs"
+                className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 flex items-center justify-end pr-2 arcade-border text-xs"
               >
                 X
               </button>
-              <p className="arcade-neon-cyan text-sm md:text-base">
+              <p className="arcade-neon-cyan text-sm md:text-base p-4">
                 💬 {alternativeHintMessage}
               </p>
             </div>
