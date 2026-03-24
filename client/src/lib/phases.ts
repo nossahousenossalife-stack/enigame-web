@@ -227,7 +227,19 @@ export const phases: Phase[] = [
       { keywords: ['pokemon'], message: 'Copiou essa resposta de onde?' },
     ],
   },
-  // Fases 19-20 serão adicionadas conforme você enviar os dados
+  {
+    id: 19,
+    url: '/segundonome',
+    title: 'FASE 19',
+    question: '',
+    answer: 'kishiwada',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase19_moto_marte-hmZ6mpv2eUNn3cXnUTSkCt.webp',
+    hint: 'wiki',
+    alternativeHints: [
+      { keywords: ['bike mice from mars'], message: 'Eles dirigem motos, quem dirigiu eles?' },
+    ],
+  },
+  // Fase 20 será adicionada conforme você enviar os dados
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
