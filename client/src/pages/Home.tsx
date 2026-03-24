@@ -4,6 +4,7 @@ import BrowserSimulator from '@/components/BrowserSimulator';
 import PhaseComponent from '@/components/PhaseComponent';
 import Footer from '@/components/Footer';
 import { ChallengeModal } from '@/components/ChallengeModal';
+import { FinalChallengeModal } from '@/components/FinalChallengeModal';
 import { phases, getPhaseByUrl } from '@/lib/phases';
 import type { Phase } from '@/lib/phases';
 import { toast } from 'sonner';
@@ -13,6 +14,7 @@ export default function Home() {
   const [currentPhase, setCurrentPhase] = useState<Phase | null>(null);
   const [phaseNotFound, setPhaseNotFound] = useState(false);
   const [showChallengeModal, setShowChallengeModal] = useState(false);
+  const [showFinalChallengeModal, setShowFinalChallengeModal] = useState(false);
 
   // Parse current path from location
   useEffect(() => {
@@ -44,6 +46,12 @@ export default function Home() {
       return;
     }
     
+    // Se eh a fase 20, mostrar modal de desafio final
+    if (currentPhase && currentPhase.id === 20) {
+      setShowFinalChallengeModal(true);
+      return;
+    }
+    
     // Navegar para a proxima fase baseado no ID da fase atual
     if (currentPhase && currentPhase.id < 20) {
       const nextPhase = phases.find((p) => p.id === currentPhase.id + 1);
@@ -64,6 +72,20 @@ export default function Home() {
 
   const handleChallengeNo = () => {
     setShowChallengeModal(false);
+    // Mostrar mensagem e voltar ao menu
+    toast.success('Obrigado pelo seu tempo, quero te conhecer. Mande mensagem no instagram @matfreixo e diga sua experiencia com o Enigame.');
+    setLocation('/');
+  };
+
+  const handleFinalChallengeYes = () => {
+    setShowFinalChallengeModal(false);
+    // Navegar para fase 21 (ou exibir mensagem de conclusão)
+    toast.success('Você é um verdadeiro mestre! Parabéns por completar o Enigame!');
+    setLocation('/');
+  };
+
+  const handleFinalChallengeNo = () => {
+    setShowFinalChallengeModal(false);
     // Mostrar mensagem e voltar ao menu
     toast.success('Obrigado pelo seu tempo, quero te conhecer. Mande mensagem no instagram @matfreixo e diga sua experiencia com o Enigame.');
     setLocation('/');
@@ -114,6 +136,9 @@ export default function Home() {
             <PhaseComponent phase={currentPhase} onCorrectAnswer={handlePhaseComplete} />
             {showChallengeModal && (
               <ChallengeModal onYes={handleChallengeYes} onNo={handleChallengeNo} />
+            )}
+            {showFinalChallengeModal && (
+              <FinalChallengeModal onYes={handleFinalChallengeYes} onNo={handleFinalChallengeNo} />
             )}
           </>
         )}

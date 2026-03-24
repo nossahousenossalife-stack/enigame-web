@@ -239,7 +239,18 @@ export const phases: Phase[] = [
       { keywords: ['bike mice from mars'], message: 'Eles dirigem motos, quem dirigiu eles?' },
     ],
   },
-  // Fase 20 será adicionada conforme você enviar os dados
+  {
+    id: 20,
+    url: '/terceira, décima',
+    title: 'FASE 20',
+    question: '',
+    answer: 'cj',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase20_demi_lovato_1f57da8c.png',
+    hint: 'al\'abjadia',
+    alternativeHints: [
+      { keywords: ['gta'], message: 'SA' },
+    ],
+  },
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
