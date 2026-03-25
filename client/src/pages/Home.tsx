@@ -53,7 +53,7 @@ export default function Home() {
     }
     
     // Navegar para a proxima fase baseado no ID da fase atual
-    if (currentPhase && currentPhase.id < 20) {
+    if (currentPhase && currentPhase.id < 23) {
       const nextPhase = phases.find((p) => p.id === currentPhase.id + 1);
       if (nextPhase) {
         setLocation(nextPhase.url);
@@ -79,9 +79,11 @@ export default function Home() {
 
   const handleFinalChallengeYes = () => {
     setShowFinalChallengeModal(false);
-    // Navegar para fase 21 (ou exibir mensagem de conclusão)
-    toast.success('Você é um verdadeiro mestre! Parabéns por completar o Enigame!');
-    setLocation('/');
+    // Navegar para fase 21
+    const nextPhase = phases.find((p) => p.id === 21);
+    if (nextPhase) {
+      setLocation(nextPhase.url);
+    }
   };
 
   const handleFinalChallengeNo = () => {

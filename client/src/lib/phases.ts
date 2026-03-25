@@ -251,6 +251,44 @@ export const phases: Phase[] = [
       { keywords: ['gta'], message: 'SA' },
     ],
   },
+  {
+    id: 21,
+    url: '/quemfalaaprimeirafrase',
+    title: 'FASE 21',
+    question: '',
+    answer: 'ralof',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase21_cavalo_carroça-9iCpv2H4NvuZR96STscm3z.webp',
+    hint: 'o 6 sai quando?',
+    alternativeHints: [
+      {
+        keywords: ['gta'],
+        message: 'SA',
+      },
+      {
+        keywords: ['skyrim'],
+        message: 'foca na URL',
+      },
+      {
+        keywords: ['dovahkiin'],
+        message: 'foca na URL',
+      },
+    ],
+  },
+  {
+    id: 22,
+    title: 'Fase 22',
+    url: '/normalouninja',
+    question: '',
+    answer: 'maui mallard',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase22_noob_saibot-YWTfzNmKfh9BFXxC8aDMsV.webp',
+    hint: 'SNES',
+    alternativeHints: [
+      {
+        keywords: ['cold shadow'],
+        message: '.... ..... cold shadow',
+      },
+    ],
+  },
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
