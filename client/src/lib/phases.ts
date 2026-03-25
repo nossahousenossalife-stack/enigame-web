@@ -287,6 +287,14 @@ export const phases: Phase[] = [
         keywords: ['cold shadow'],
         message: '.... ..... cold shadow',
       },
+      {
+        keywords: ['mortal kombat'],
+        message: 'noob saibot nessa foto está GELADO e ele usa SOMBRAS?',
+      },
+      {
+        keywords: ['noob saibot'],
+        message: 'noob saibot nessa foto está GELADO e ele usa SOMBRAS?',
+      },
     ],
   },
 ];
