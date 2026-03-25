@@ -297,6 +297,29 @@ export const phases: Phase[] = [
       },
     ],
   },
+  {
+    id: 23,
+    title: 'Fase 23',
+    url: '/hardestfase',
+    question: '',
+    answer: 'even flow',
+    imageUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663409060469/VRbBdHgPGJv88rQk9Jnk3f/fase23_cores_03ea4be5.png',
+    hint: 'tom morello',
+    alternativeHints: [
+      {
+        keywords: ['guitar hero'],
+        message: 'paranoid/anarchy in the u.k/ kool thing /my name is jonas/ and?',
+      },
+      {
+        keywords: ['guitar hero 3'],
+        message: 'paranoid/anarchy in the u.k/ kool thing /my name is jonas/ and?',
+      },
+      {
+        keywords: ['guitar hero iii'],
+        message: 'paranoid/anarchy in the u.k/ kool thing /my name is jonas/ and?',
+      },
+    ],
+  },
 ];
 
 export const getPhaseByUrl = (url: string): Phase | undefined => {
