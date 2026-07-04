@@ -53,7 +53,7 @@ export default function Home() {
     }
     
     // Navegar para a proxima fase baseado no ID da fase atual
-    if (currentPhase && currentPhase.id < 24) {
+    if (currentPhase && currentPhase.id < 25) {
       const nextPhase = phases.find((p) => p.id === currentPhase.id + 1);
       if (nextPhase) {
         setLocation(nextPhase.url);
